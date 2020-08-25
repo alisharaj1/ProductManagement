@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<span>
+    <a routerLink= "../product-master"><button class="btn-success" id="back">Back</button></a>
+    <a routerLink="../login"><button class="btn-success" id="logout">Logout</button></a>
+    </span>
+<section class="col-md-4 mx-auto ">
+    <div class="container-fluid" style="align-items: baseline;">
+        <h2 class="test-center" style="text-decoration:wavy; color: Green; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;" >ADD PRODUCT</h2>
+    <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined" [innerHTML]="errorMsg">{{errorMsg}}</div>
+    <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color:black;
+           color:white;
+           text-align: center;
+           height:5%;
+        }
+        </style>
+    <form #frm="ngForm" (ngSubmit)="addproduct(); frm.reset()">
+        <div class="st">
+           <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Product Name</div>
+            <div><input type="text" name="productName" [(ngModel)]="product.productName"  placeholder="Product Name" required #modelproductName="ngModel" class="form-control"/></div>
+            <div class="alert alert-danger" *ngIf="modelproductName.invalid&&modelproductName.touched"><div class="text-danger" *ngIf='modelproductName.errors.required'> Please Fill This!!
+            </div></div>
+            
+        <div  style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Product Category</div>
+        <div><input type="text" name="pcat" [(ngModel)]="product.productCategory"  placeholder="Product Category" required #modelpcat="ngModel" class="form-control"></div>
+        <div class="alert alert-danger" *ngIf="modelpcat.invalid&&modelpcat.touched"><div class="text-danger" *ngIf='modelpcat.errors.required'> Please Fill This!!
+        </div></div>
+
+        <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Specification</div>
+        <div><input type="text" name="specification" [(ngModel)]="product.specification"  placeholder="Product Specification" required #modelspecification="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="modelspecification.invalid&&modelspecification.touched">Specification is required</div>
+        
+        <div  style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color:  darkslateblue;">Colour</div>
+        <div><input type="text" name="colour" [(ngModel)]="product.colour"  placeholder="Product Colour" required #modelcolour="ngModel" class="form-control"></div>
+        <div class="alert alert-danger" *ngIf="modelcolour.touched&&!modelcolour.valid">Product Colour is required</div>
+
+        <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Manufacturer</div>
+        <div><input type="text" name="manufacturer" [(ngModel)]="product.manufacturer"  placeholder="Product Manufacturer" required #modelmanufacturer="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="modelmanufacturer.invalid&&modelmanufacturer.touched">Manufacturer is required</div>
+
+        <div  style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Dimension</div>
+        <div><input type="text" name="dimension" [(ngModel)]="product.dimension"  placeholder="Dimension" required #modeldimension="ngModel" class="form-control"></div>
+        <div class="alert alert-danger" *ngIf="modeldimension.invalid&&modeldimension.touched">Product Dimension is required</div>
+        
+
+        <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Quantity</div>
+        <div><input type="text" name="quantity" [(ngModel)]="product.quantity"  placeholder="Quantity" required pattern="^[0-9]*$"  #modelquantity="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="modelquantity.invalid&&modelquantity.touched">Quantity is required</div>
+        <div class='alert alert-danger' *ngIf="modelquantity.invalid&&modelquantity.dirty">Quantity should be numeric</div>
+
+
+        <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: medium; color: darkslateblue;">Price</div>
+        <div><input type="text" name="price" [(ngModel)]="product.price"  placeholder="Product Price" required pattern="^[0-9]*$"  #modelprice="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="modelprice.invalid&&modelprice.touched">Price is required</div>
+        <div class='alert alert-danger' *ngIf="modelprice.invalid&&modelprice.dirty">Price should be numeric</div>
+    
+        
+        <div class="mt-2 text-center"><input type="Submit" value="Add Product" [disabled]="!frm.valid" class="btn btn-success"/>&nbsp; <input type="reset"class="btn btn-success"> </div>
+        </div>
+    </form>
+    
+    <div style="text-align:center">
+        <a routerLink= "../footer" style="text-decoration:solid; color:black;font-family:fantasy">Do You need any help?</a>
+      </div>
+      <div style="line-height:500%;">
+        <br>
+    </div>
+
+    </div>
+</section></html>
+

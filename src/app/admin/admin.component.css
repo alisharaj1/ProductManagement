@@ -1,0 +1,11 @@
+html{
+  background-image: url('src/assets/images/admin.jpg');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+    height:100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+}

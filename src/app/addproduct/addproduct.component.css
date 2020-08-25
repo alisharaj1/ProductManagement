@@ -1,0 +1,30 @@
+
+    
+    #back {
+    float: left;
+    max-width: 30%;
+    overflow: hidden;
+    }
+    
+    #logout {
+    float: right;
+    max-width: 30%;
+    overflow: hidden;
+    }
+    
+    span {
+    width:50%;
+    margin: 10px;
+    text-align: left;
+    }
+    html{
+        background-image: url('src/assets/images/add.jpg');
+          background-repeat: no-repeat;
+          background-position: cover;
+          background-size: cover;
+          height:100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+      
+      }
